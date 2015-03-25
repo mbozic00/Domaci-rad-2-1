@@ -1,0 +1,34 @@
+﻿<Window x:Class="PzwDomaci2_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:PzwDomaci2_1"
+        Title="PZW Domaci 2" Height="800" Width="1025" Loaded="OnWindowLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Margin="2" Width="70" x:Name="LeftButton" Background="#FFC1C1C1" FontSize="14">Dodaj L</Button>
+            <Button Margin="2" Width="70" x:Name="RightButton" Background="#FFC1C1C1" FontSize="14">Dodaj R</Button>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0" x:Name="CurrentUserContainer">
+            <controls:User_NoEditDelete UserName_No="Sheldon" ImageSource_No="pack://siteoforigin:,,,/Resources/Images/Sheldon.jpg"></controls:User_NoEditDelete>
+        </Grid>
+        <StackPanel Margin="0,20,0,0" Grid.Row="2" Grid.Column="0" Orientation="Vertical" x:Name="UsersContainer">
+            <controls:User UserName="Penny" ImageSource="pack://siteoforigin:,,,/Resources/Images/Penny.jpg"></controls:User>
+            <controls:User UserName="Leonard" ImageSource="pack://siteoforigin:,,,/Resources/Images/Leonard.jpg"></controls:User>
+            <controls:User UserName="Amy" ImageSource="pack://siteoforigin:,,,/Resources/Images/Amy.jpg"></controls:User>
+        </StackPanel>
+        <StackPanel Margin="0,20,0,0" Grid.Row="2" Grid.Column="1" Orientation="Vertical" x:Name="PostsContainer">
+            <controls:Post PostUserName="Penny" PostImageSource="pack://siteoforigin:,,,/Resources/Images/Penny.jpg" Margin="20" BackgroundColor="LightGray" PostText="Sheldon, could you teach me a little physics?"></controls:Post>
+            <controls:Post PostUserName="Sheldon" PostImageSource="pack://siteoforigin:,,,/Resources/Images/Sheldon.jpg" Margin="20" BackgroundColor="LightGreen" PostText="&quot;A little&quot; physics?"></controls:Post>
+            <controls:Post PostUserName="Sheldon" PostImageSource="pack://siteoforigin:,,,/Resources/Images/Sheldon.jpg" Margin="20" BackgroundColor="LightGreen" PostText="There's no such thing as &quot;a little&quot; physics."></controls:Post>
+        </StackPanel>
+    </Grid>
+</Window>
